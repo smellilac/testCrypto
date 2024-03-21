@@ -33,12 +33,12 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(61, 74);
+            textBox1.Location = new Point(61, 82);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(1292, 880);
+            textBox1.Size = new Size(1292, 886);
             textBox1.TabIndex = 0;
-            textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.TextChanged += TextBox1_TextChanged;
             // 
             // Form1
             // 

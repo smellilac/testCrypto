@@ -3,46 +3,62 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using testingCryptol;
+
 public partial class Form1 : Form
-{ 
-
-    private HttpClient client;
+{
     private Timer timer;
+    private string selectedExchange;
 
-    public Form1()
+    public Form1(string exchange)
     {
         InitializeComponent();
-        textBox1.TextChanged += textBox1_TextChanged;
+        textBox1.TextChanged += TextBox1_TextChanged;
 
-        client = new HttpClient();
-        client.BaseAddress = new Uri("https://api.binance.com");
+        selectedExchange = exchange;
 
         timer = new Timer();
-        timer.Interval = 5000; // 5 секунд
+        timer.Interval = 5000;
         timer.Tick += Timer_Tick;
         timer.Start();
     }
 
-    public void textBox1_TextChanged(object sender, EventArgs e) { }
+    private void TextBox1_TextChanged(object sender, EventArgs e) { }
 
     private async void Timer_Tick(object sender, EventArgs e)
     {
-        HttpResponseMessage response = await client.GetAsync("/api/v3/ticker/price?symbol=BTCUSDT");
+        string result = "";
 
-        if (response.IsSuccessStatusCode)
+        switch (selectedExchange)
         {
-            string result = await response.Content.ReadAsStringAsync();
-
-            // Обновление UI в главном потоке
-            this.Invoke((MethodInvoker)delegate
-            {
-                textBox1.AppendText(result + Environment.NewLine); // Выводим результат в TextBox на форме
-            });
+            case "Binance":
+                BinanceExchange binanceExchange = new BinanceExchange();
+                result = await binanceExchange.GetBtcUsdtPrice();
+                MessageBox.Show(result);
+                break;
+            case "Bybit":
+                BybitExchange bybitExchange = new BybitExchange();
+                result = await bybitExchange.GetBtcUsdtPair();
+                MessageBox.Show(result);
+                break;
+            case "Kucoin":
+                KucoinExchange kucoinExchange = new KucoinExchange();
+                result = await kucoinExchange.GetBtcUsdtPair();
+                MessageBox.Show(result);
+                break;
+            case "Bitget":
+                BitgetExchange bitgetExchange = new BitgetExchange();
+                result = await bitgetExchange.GetBtcUsdtPair();
+                MessageBox.Show(result);
+                break;
+            default:
+                MessageBox.Show("Unsupported exchange selected");
+                break;
         }
-        else
+
+        this.Invoke((MethodInvoker)delegate
         {
-            MessageBox.Show("Error occurred: " + response.ReasonPhrase);
-        }
-
+            textBox1.AppendText(result + Environment.NewLine);
+        });
     }
 }
