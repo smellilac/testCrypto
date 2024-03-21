@@ -12,9 +12,9 @@ using Binance.Net.Objects;
 using System;
 using System.Text.Json;
 
-public class BinanceExchange
+public class BinanceExchange : IExchange
 {
-    public async Task<string> GetBtcUsdtPrice()
+    public async Task<string> GetBtcUsdtPair()
     {
         var restClient = new BinanceRestClient();
         var tickerResult = await restClient.SpotApi.ExchangeData.GetTickerAsync("BTCUSDT");

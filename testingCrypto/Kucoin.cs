@@ -13,7 +13,7 @@ using Kucoin.Net.Objects;
 using System;
 using System.Text.Json;
 
-public class KucoinExchange
+public class KucoinExchange : IExchange
 {
     public async Task<string> GetBtcUsdtPair()
     {

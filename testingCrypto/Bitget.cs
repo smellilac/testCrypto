@@ -9,8 +9,9 @@ namespace testingCryptol;
 using Bitget.Net.Clients;
 using System;
 using System.Text.Json;
+using testingCrypto;
 
-public class BitgetExchange
+public class BitgetExchange : IExchange
 {
     public async Task<string> GetBtcUsdtPair()
     {

@@ -9,6 +9,7 @@ public partial class Form1 : Form
 {
     private Timer timer;
     private string selectedExchange;
+    private IExchange exchange;
 
     public Form1(string exchange)
     {
@@ -32,33 +33,29 @@ public partial class Form1 : Form
         switch (selectedExchange)
         {
             case "Binance":
-                BinanceExchange binanceExchange = new BinanceExchange();
-                result = await binanceExchange.GetBtcUsdtPrice();
-                MessageBox.Show(result);
+                exchange = new BinanceExchange();
                 break;
             case "Bybit":
-                BybitExchange bybitExchange = new BybitExchange();
-                result = await bybitExchange.GetBtcUsdtPair();
-                MessageBox.Show(result);
+                exchange = new BybitExchange();
                 break;
             case "Kucoin":
-                KucoinExchange kucoinExchange = new KucoinExchange();
-                result = await kucoinExchange.GetBtcUsdtPair();
-                MessageBox.Show(result);
+                exchange = new KucoinExchange();
                 break;
             case "Bitget":
-                BitgetExchange bitgetExchange = new BitgetExchange();
-                result = await bitgetExchange.GetBtcUsdtPair();
-                MessageBox.Show(result);
+                exchange = new BitgetExchange();
                 break;
             default:
                 MessageBox.Show("Unsupported exchange selected");
                 break;
         }
 
-        this.Invoke((MethodInvoker)delegate
+        this.Invoke((MethodInvoker)async delegate
         {
-            textBox1.AppendText(result + Environment.NewLine);
+            if (exchange != null)
+            {
+                string result = await exchange.GetBtcUsdtPair();
+                textBox1.AppendText(result);
+            }
         });
     }
 }

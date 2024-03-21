@@ -12,7 +12,7 @@ using CryptoExchange.Net.Interfaces;
 using System;
 using System.Text.Json;
 
-public class BybitExchange
+public class BybitExchange : IExchange
 {
     public async Task<string> GetBtcUsdtPair()
     {
