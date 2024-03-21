@@ -1,0 +1,16 @@
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\testingCrypto.Form1.resources
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\testingCrypto.csproj.GenerateResource.cache
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\testingCrypto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\testingCrypto.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\testingCrypto.AssemblyInfo.cs
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\testingCrypto.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\testingCrypto\testingCrypto\bin\Debug\net8.0-windows\testingCrypto.exe
+C:\Users\User\source\repos\testingCrypto\testingCrypto\bin\Debug\net8.0-windows\testingCrypto.deps.json
+C:\Users\User\source\repos\testingCrypto\testingCrypto\bin\Debug\net8.0-windows\testingCrypto.runtimeconfig.json
+C:\Users\User\source\repos\testingCrypto\testingCrypto\bin\Debug\net8.0-windows\testingCrypto.dll
+C:\Users\User\source\repos\testingCrypto\testingCrypto\bin\Debug\net8.0-windows\testingCrypto.pdb
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\testingCrypto.dll
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\refint\testingCrypto.dll
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\testingCrypto.pdb
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\testingCrypto.genruntimeconfig.cache
+C:\Users\User\source\repos\testingCrypto\testingCrypto\obj\Debug\net8.0-windows\ref\testingCrypto.dll
